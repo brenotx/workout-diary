@@ -5,11 +5,15 @@ import 'sanitize.css/sanitize.css';
 
 import './index.css';
 import App from './App';
+import SignIn from './components/Auth/SignIn.js';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Router>
-        <Route exact path="/" component={App} />
+        <div>
+            <Route exact path="/" component={App} />
+            <Route path="/signIn" component={SignIn} />
+        </div>
     </Router>,
     document.getElementById('root')
 );
