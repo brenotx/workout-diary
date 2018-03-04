@@ -6,14 +6,14 @@ import 'sanitize.css/sanitize.css';
 import './index.css';
 import App from './App';
 import SignIn from './components/Auth/SignIn.js';
+import InputText from './components/InputText';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Router>
-        <div>
-            <Route exact path="/" component={App} />
+        <App>
             <Route path="/signIn" component={SignIn} />
-        </div>
+        </App>
     </Router>,
     document.getElementById('root')
 );
