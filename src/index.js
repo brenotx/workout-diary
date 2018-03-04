@@ -5,8 +5,7 @@ import 'sanitize.css/sanitize.css';
 
 import './index.css';
 import App from './App';
-import SignIn from './components/Auth/SignIn.js';
-import InputText from './components/InputText';
+import SignIn from './containers/Auth/SignIn.js';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(

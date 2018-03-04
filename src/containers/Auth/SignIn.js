@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 
-import SigninPaper from './SigninPaper';
 import AuthBox from './AuthBox';
-import InputText from '../InputText';
+import InputText from '../../components/InputText';
 
 const AuthBoxH1 = styled.h1`
     margin: 0 0 20px 0;
@@ -16,10 +13,10 @@ const AuthBoxH1 = styled.h1`
 
 const SignIn = () => {
     return (
-        <div>
+        <AuthBox>
             <InputText hintText="Email" type="email" errorMsg="Email invalido!" />
             <InputText hintText="Password" type="password" errorMsg="Password invalido!" />
-        </div>
+        </AuthBox>
     );
 };
 
