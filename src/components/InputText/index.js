@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -74,5 +75,10 @@ class InputText extends Component {
         );
     }
 }
+
+InputText.propTypes = {
+    hintText: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
+};
 
 export default InputText;
