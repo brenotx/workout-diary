@@ -15,7 +15,7 @@ class InputText extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.setInputDirty = this.setInputDirty.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
         this.setInputClass = this.setInputClass.bind(this);
     }
 
@@ -37,13 +37,14 @@ class InputText extends Component {
         }
     }
 
-    handleChange(event) {
+    handleChange(e) {
         this.setState({
-            value: event.target.value
+            value: e.target.value
+            // isValid: this.state.isDirty ? this.validate(e.target.value) : false
         });
     }
 
-    setInputDirty() {
+    handleBlur() {
         this.setState({
             isDirty: true,
             isValid: this.validate()
@@ -64,13 +65,11 @@ class InputText extends Component {
                     type={this.props.type}
                     value={this.state.value}
                     onChange={this.handleChange}
-                    onBlur={this.setInputDirty}
+                    onBlur={this.handleBlur}
                     required
                 />
-                <label htmlFor="" className="">
-                    {this.props.hintText}
-                </label>
-                <span className="md-textfield-error">{!this.state.isValid ? this.state.errorMsg : ''}</span>
+                <label htmlFor="">{this.props.hintText}</label>
+                <span>{!this.state.isValid ? this.state.errorMsg : ''}</span>
             </div>
         );
     }
