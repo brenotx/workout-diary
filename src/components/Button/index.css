@@ -9,14 +9,14 @@ button {
     width: 100%;
     padding: 0 16px;
     display: inline-block;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0;
     overflow: hidden;
-    will-change: box-shadow;
-    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    /* will-change: box-shadow; */
+    /* transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1); */
     outline: none;
     cursor: pointer;
     text-decoration: none;
@@ -24,4 +24,16 @@ button {
     line-height: 36px;
     vertical-align: middle;
     background-color: #673ab7;
+    opacity: 1;
+    transition: all 0.7 ease-out;
+    transform: scale(1);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button.is-clicked {
+    opacity: 0.9;
+    transform: scale(1.02);
 }

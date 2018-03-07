@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import './index.css';
+import "./index.css";
 
 const ERROR_MSG = {
-    email: 'Invalid email.',
-    password: 'Password must be at least 6 characters long.'
-}
+    email: "Invalid email.",
+    password: "Password must be at least 6 characters long."
+};
 
 class InputText extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: '',
-            value: '',
+            type: "",
+            value: "",
             isDirty: false
         };
 
@@ -29,18 +29,19 @@ class InputText extends Component {
 
     handleBlur() {
         this.setState({
-            isDirty: true,
+            isDirty: true
         });
     }
 
     render() {
         return (
             <form>
-                <input className={this.state.isDirty ? 'is-dirty' : ''}
+                <input
+                    className={this.state.isDirty ? "is-dirty" : ""}
                     id={this.props.type}
                     type={this.props.type}
                     value={this.state.value}
-                    minlength={this.props.type === 'password' ? 6 : null}
+                    minLength={this.props.type === "password" ? 6 : null}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
                     required

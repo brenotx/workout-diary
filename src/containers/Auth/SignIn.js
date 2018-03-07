@@ -14,7 +14,7 @@ class SignIn extends Component {
                 <img src={loginLogo} alt="Person Icon" />
                 <InputText hintText="Email" type="email" />
                 <InputText hintText="Password" type="password" />
-                <Button />
+                <Button>Sign in</Button>
             </AuthBox>
         );
     }
