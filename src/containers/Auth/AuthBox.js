@@ -1,14 +1,22 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const AuthBox = styled.div`
     position: relative;
     margin: 15% auto;
-    width: 250px;
-    height: 300px;
-    padding: 1em;
+    width: 300px;
+    height: 400px;
+    padding: 2em;
     background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+    & > img {
+        height: 70px;
+        width: 70px;
+        display: block;
+        margin: 10px auto 40px;
+    }
 `;
 
 export default AuthBox;

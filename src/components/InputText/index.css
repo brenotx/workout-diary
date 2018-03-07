@@ -5,7 +5,7 @@ form {
 }
 
 input {
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     width: 100%;
     display: block;
     border: none;
@@ -29,6 +29,10 @@ input:focus, input:valid {
 input.is-dirty:invalid {
     border-color: #E91E63;
     background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, #E91E63 4%);
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
 }
 
 label {
@@ -59,7 +63,7 @@ span {
     color: #E91E63;
     position: absolute;
     font-size: 0.7rem;
-    margin-top: -15px;
+    margin-top: -38px;
     display: block;
 }
 
