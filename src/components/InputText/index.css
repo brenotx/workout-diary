@@ -1,5 +1,22 @@
+/* 
+    $color-primary: 500;
+    $color-primary-dark: 700;
+    $color-accent: A200;
+    $color-primary-contrast: "255,255,255";
+    $color-accent-contrast: "0,0,0"; 
+*/
+
+:root {
+    --primary-color: #673ab7;
+    --primary-light: #9a67ea;
+    --primary-dark: #320b86;
+    --secondary-color: #512da8;
+    --secondary-light: #8559da;
+    --secondary-dark: #140078;
+}
+
 body {
-    background-color: #673ab7;
+    background-color: var(--primary-color);
 }
 
 form {
@@ -8,31 +25,50 @@ form {
     margin-bottom: 2rem;
 }
 
+/* START - Default input css and valid input css */
 input {
     margin: 0 0 40px 0;
     width: 100%;
     display: block;
     border: none;
     padding: 14px 0 8px;
-    border-bottom: solid 1px #673ab7;
     transition: all 0.4s ease-out;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, #673ab7 4%);
+    border-bottom: solid 1px var(--primary-color);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        var(--primary-color) 4%
+    );
+    background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 0 100%;
-    background-repeat: no-repeat;
-    /* color: darken(#673ab7, 20%); */
+    color: darken(var(--primary-color), 20%);
 }
 
-input:focus, input:valid {
+input:focus {
     box-shadow: none;
     outline: none;
-    background-size: 100% 100%;
     background-position: 100% 0;
+    background-size: 100% 100%;
 }
 
-input.is-dirty:invalid {
-    border-color: #E91E63;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, #E91E63 4%);
+input:invalid.is-dirty {
+    border-bottom-color: #e91e63;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        #e91e63 4%
+    );
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 0 100%;
+}
+
+input:invalid.is-dirty:focus {
+    box-shadow: none;
+    outline: none;
+    background-position: 100% 0;
+    background-size: 100% 100%;
 }
 
 input:-webkit-autofill,
@@ -56,18 +92,18 @@ input:valid ~ label,
 input:valid.is-dirty ~ label {
     transform: translateY(-26px) translateX(2px) scale(0.8);
     transform-origin: 0 0;
-    color: #673ab7;
+    color: var(--primary-color);
 }
 
 input.is-dirty ~ label,
 input.invalid ~ label {
     transform: translateY(-26px) translateX(2px) scale(0.8);
     transform-origin: 0 0;
-    color: #E91E63;
+    color: #e91e63;
 }
 
 span {
-    color: #E91E63;
+    color: #e91e63;
     position: absolute;
     font-size: 0.7rem;
     margin-top: -38px;
@@ -76,5 +112,5 @@ span {
 
 input:not(.is-dirty) ~ span,
 input:valid ~ span {
-    visibility: hidden
+    visibility: hidden;
 }
