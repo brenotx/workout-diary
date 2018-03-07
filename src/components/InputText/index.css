@@ -1,11 +1,3 @@
-/* 
-    $color-primary: 500;
-    $color-primary-dark: 700;
-    $color-accent: A200;
-    $color-primary-contrast: "255,255,255";
-    $color-accent-contrast: "0,0,0"; 
-*/
-
 :root {
     --primary-color: #673ab7;
     --primary-light: #9a67ea;
@@ -13,6 +5,7 @@
     --secondary-color: #512da8;
     --secondary-light: #8559da;
     --secondary-dark: #140078;
+    --text-error-color: #e91e63;
 }
 
 body {
@@ -25,7 +18,6 @@ form {
     margin-bottom: 2rem;
 }
 
-/* START - Default input css and valid input css */
 input {
     margin: 0 0 40px 0;
     width: 100%;
@@ -53,11 +45,11 @@ input:focus {
 }
 
 input:invalid.is-dirty {
-    border-bottom-color: #e91e63;
+    border-bottom-color: var(--text-error-color);
     background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0) 96%,
-        #e91e63 4%
+        var(--text-error-color) 4%
     );
     background-repeat: no-repeat;
     background-position: 50% 0;
@@ -99,11 +91,11 @@ input.is-dirty ~ label,
 input.invalid ~ label {
     transform: translateY(-26px) translateX(2px) scale(0.8);
     transform-origin: 0 0;
-    color: #e91e63;
+    color: var(--text-error-color);
 }
 
 span {
-    color: #e91e63;
+    color: var(--text-error-color);
     position: absolute;
     font-size: 0.7rem;
     margin-top: -38px;
