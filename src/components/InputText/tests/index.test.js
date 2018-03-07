@@ -12,49 +12,41 @@ describe('<InputText />', () => {
         };
     });
 
-    it('should render a div', () => {
+    it('should render a <form', () => {
         const renderedComponent = shallow(<InputText {...props} />);
-        expect(renderedComponent.find('div').length).toBe(1);
+        expect(renderedComponent.find('form').length).toBe(1);
     });
 
-    it('should render a input', () => {
+    it('should render a <input', () => {
         const renderedComponent = shallow(<InputText {...props} />);
         expect(renderedComponent.find('input').length).toBe(1);
     });
 
-    it('should render a label', () => {
+    it('should render a <label', () => {
         const renderedComponent = shallow(<InputText {...props} />);
         expect(renderedComponent.find('label').length).toBe(1);
     });
 
-    it('should render a span', () => {
+    it('should render a <span', () => {
         const renderedComponent = shallow(<InputText {...props} />);
         expect(renderedComponent.find('span').length).toBe(1);
     });
 
-    it('setInputDirty function should apply dirty class', () => {
+    it('onBlur event should apply is-dirty class', () => {
         const renderedComponent = shallow(<InputText {...props} />);
-        expect(renderedComponent.find('.dirty').length).toBe(0);
+        expect(renderedComponent.find('.is-dirty').length).toBe(0);
         renderedComponent.find('input').simulate('blur');
-        expect(renderedComponent.find('.dirty').length).toBe(1);
+        expect(renderedComponent.find('.is-dirty').length).toEqual(1);
     });
 
-    // it('should validade email', () => {
-    //     const wrapper = shallow(<InputText {...props} />);
-    //     const input = wrapper.find('input');
-    //     // console.log('@@@: ' + JSON.stringify(input.get(0)));
-    //     input.simulate('change', { target: { value: 'Hello' } });
-    //     expect(wrapper.state('isValid')).toEqual('blah@gmail.');
-    //     // wrapper.setState({ value: 'bar' });
-    //     // console.log('@@@@@: ' + JSON.stringify(input.get(0)));
-    //     // input.get(0).props.value = 'oioioi';
-    //     // input.simulate('change', { target: { value: 'Changed' } });
-    //     // console.log('#####: ' + JSON.stringify(input.get(0)));
-    //     // expect(input.get(0).value).toBe('Hello');
+    it('onChange event should update "value" state', () => {
+        const renderedComponent = shallow(<InputText {...props} />);
+        renderedComponent.find('input').simulate('change', { target: { value: 'hello world' }});
+        expect(renderedComponent.state().value).toBe('hello world');
+    })
 
-    //     // expect(wrapper.find('input').value).toBe(undefined);
-    //     // wrapper.find('input').instance().value = 'abc';
-    //     // wrapper.find('input').instance().value = 'abc';
-    //     expect(wrapper.find('.invalid').length).toBe(1);
-    // });
+    it('input type equals passworld should have minlength = 6 attr', () => {
+        const renderedComponent = shallow(<InputText hintText="Passworld"  type="password" />);
+        expect(renderedComponent.find('input').prop('minlength') === 6);
+    })
 });
