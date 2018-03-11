@@ -1,13 +1,13 @@
 button {
     background: 0 0;
     border: none;
-    border-radius: 3px;
+    border-radius: 0.188em;
     position: relative;
     color: #fff;
-    height: 36px;
-    margin: 0;
+    height: 2.25em;
+    margin: 0.5em 0;
     width: 100%;
-    padding: 0 16px;
+    padding: 0 1em;
     display: inline-block;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1em;
@@ -21,7 +21,7 @@ button {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    line-height: 36px;
+    line-height: 2.25em;
     vertical-align: middle;
     background-color: #673ab7;
     opacity: 1;
