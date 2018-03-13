@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import 'sanitize.css/sanitize.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "sanitize.css/sanitize.css";
 
-import './index.css';
-import App from './containers/App';
-import SignIn from './containers/Auth/SignIn.js';
-import registerServiceWorker from './registerServiceWorker';
+import "./index.css";
+import App from "./containers/App";
+import SignIn from "./containers/Auth/SignIn.js";
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
     <Router>
@@ -14,6 +14,6 @@ ReactDOM.render(
             <Route path="/signIn" component={SignIn} />
         </App>
     </Router>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 registerServiceWorker();

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import styled from "styled-components";
-
 import AuthBox from "./AuthBox";
 import InputText from "../../components/InputText";
 import Button from "../../components/Button";

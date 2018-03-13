@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import "./index.css";
 
@@ -31,11 +30,7 @@ class Button extends Component {
 
     render() {
         return (
-            <button
-                className={this.setButtonClass()}
-                onMouseDown={this.handleOnMouseDown}
-                onMouseUp={this.handleOnMouseUp}
-            >
+            <button className={this.setButtonClass()} onMouseDown={this.handleOnMouseDown} onMouseUp={this.handleOnMouseUp}>
                 {this.props.children}
             </button>
         );
