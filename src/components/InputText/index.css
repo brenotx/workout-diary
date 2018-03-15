@@ -12,11 +12,11 @@ body {
     background-color: var(--primary-color);
 }
 
-form {
+/* div {
     position: relative;
     margin-top: 1rem;
     margin-bottom: 2rem;
-}
+} */
 
 input {
     margin: 0 0 2.5em 0;
@@ -72,14 +72,16 @@ label {
 }
 
 input:focus ~ label,
-input:valid ~ label,
-input:valid.is-dirty ~ label {
+input:valid.is-dirty ~ label,
+input[value]:not([value=""]) ~ label,
+input:valid[value]:not([value=""]) ~ label {
     transform: translateY(-1.625em) translateX(0.125em) scale(0.8);
     transform-origin: 0 0;
     color: var(--primary-color);
 }
 
 input.is-dirty ~ label,
+/* input[value]:not([value=""]) ~ label, */
 input.invalid ~ label {
     transform: translateY(-1.625em) translateX(0.125em) scale(0.8);
     transform-origin: 0 0;

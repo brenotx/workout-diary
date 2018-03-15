@@ -8,13 +8,14 @@ describe("<InputText />", () => {
     beforeEach(() => {
         props = {
             hintText: "Name",
-            type: "text"
+            type: "text",
+            onSubmit: function() {}
         };
     });
 
-    it("should render a <form", () => {
+    it("should render a <div", () => {
         const renderedComponent = shallow(<InputText {...props} />);
-        expect(renderedComponent.find("form").length).toBe(1);
+        expect(renderedComponent.find("div").length).toBe(1);
     });
 
     it("should render a <input", () => {
@@ -41,16 +42,12 @@ describe("<InputText />", () => {
 
     it('onChange event should update "value" state', () => {
         const renderedComponent = shallow(<InputText {...props} />);
-        renderedComponent
-            .find("input")
-            .simulate("change", { target: { value: "hello world" } });
+        renderedComponent.find("input").simulate("change", { target: { value: "hello world" } });
         expect(renderedComponent.state().value).toBe("hello world");
     });
 
     it("input type equals passworld should have minlength = 6 attr", () => {
-        const renderedComponent = shallow(
-            <InputText hintText="Passworld" type="password" />
-        );
+        const renderedComponent = shallow(<InputText hintText="Passworld" type="password" />);
         expect(renderedComponent.find("input").prop("minlength") === 6);
     });
 });
