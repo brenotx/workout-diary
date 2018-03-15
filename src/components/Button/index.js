@@ -9,12 +9,15 @@ class Button extends Component {
             isClicked: false
         };
 
+        // this.onClick = this.onClick.bind(this);
         this.handleOnMouseDown = this.handleOnMouseDown.bind(this);
         this.handleOnMouseUp = this.handleOnMouseUp.bind(this);
         this.setButtonClass = this.setButtonClass.bind(this);
     }
 
-    // handleOnClick() {}
+    // handleOnClick() {
+    //     this.props.onClick()
+    // }
 
     handleOnMouseDown() {
         this.setState({ isClicked: true });
@@ -30,7 +33,12 @@ class Button extends Component {
 
     render() {
         return (
-            <button className={this.setButtonClass()} onMouseDown={this.handleOnMouseDown} onMouseUp={this.handleOnMouseUp}>
+            <button
+                className={this.setButtonClass()}
+                onClick={this.props.onClick}
+                onMouseDown={this.handleOnMouseDown}
+                onMouseUp={this.handleOnMouseUp}
+            >
                 {this.props.children}
             </button>
         );

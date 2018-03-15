@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import "./index.css";
+import Container from "./Container";
 
 const ERROR_MSG = {
     email: "Invalid email.",
@@ -25,17 +26,20 @@ class InputText extends Component {
         this.setState({
             value: e.target.value
         });
+        this.props.onSubmit(this.props.type, this.state.value);
     }
 
     handleBlur() {
-        this.setState({
-            isDirty: true
-        });
+        if (this.props.blurValidation) {
+            this.setState({
+                isDirty: true
+            });
+        }
     }
 
     render() {
         return (
-            <form>
+            <Container>
                 <input
                     className={this.state.isDirty ? "is-dirty" : ""}
                     id={this.props.type}
@@ -44,18 +48,25 @@ class InputText extends Component {
                     minLength={this.props.type === "password" ? 6 : null}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
-                    required
+                    required={this.props.requred}
                 />
                 <label htmlFor={this.props.type}>{this.props.hintText}</label>
                 <span>{ERROR_MSG[this.props.type]}</span>
-            </form>
+            </Container>
         );
     }
 }
 
 InputText.propTypes = {
     hintText: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
+    type: PropTypes.string.isRequired,
+    required: PropTypes.bool,
+    blurValidation: PropTypes.bool
+};
+
+InputText.defaultProps = {
+    required: false,
+    blurValidation: false
 };
 
 export default InputText;
