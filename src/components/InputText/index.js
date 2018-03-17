@@ -23,10 +23,13 @@ class InputText extends Component {
     }
 
     handleChange(e) {
-        this.setState({
-            value: e.target.value
-        });
-        this.props.onSubmit(this.props.type, this.state.value);
+        e.preventDefault();
+        this.setState(
+            {
+                value: e.target.value
+            },
+            () => this.props.onSubmit(this.props.type, this.state.value)
+        );
     }
 
     handleBlur() {
@@ -39,7 +42,7 @@ class InputText extends Component {
 
     render() {
         return (
-            <Container>
+            <Container className="input-text">
                 <input
                     className={this.state.isDirty ? "is-dirty" : ""}
                     id={this.props.type}
@@ -48,7 +51,7 @@ class InputText extends Component {
                     minLength={this.props.type === "password" ? 6 : null}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
-                    required={this.props.requred}
+                    required={this.props.required}
                 />
                 <label htmlFor={this.props.type}>{this.props.hintText}</label>
                 <span>{ERROR_MSG[this.props.type]}</span>

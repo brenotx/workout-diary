@@ -18,7 +18,7 @@ const INITIAL_STATE = {
     error: null
 };
 
-class SignIn extends Component {
+class SignUp extends Component {
     constructor() {
         super();
         this.state = { ...INITIAL_STATE };
@@ -65,9 +65,6 @@ class SignIn extends Component {
                     onSubmit={this.setInputValue}
                     required={true}
                 />
-                <ForgotLink>
-                    <Link to="/auth/password">Forgot Password?</Link>
-                </ForgotLink>
                 <Button onClick={() => this.handleSubmit(this.state.email, this.state.password)}>
                     Sign in
                 </Button>
@@ -76,4 +73,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default SignUp;
