@@ -18,7 +18,7 @@ class Password extends Component {
                     "Enter your email address and we'll send you a link so you can reset your
                     password."
                 </span>
-                <InputText hintText="email" />
+                <InputText hintText="email" type="email" />
                 <ForgotLink>
                     <Link to="/auth/signin">Back to sign in</Link>
                 </ForgotLink>

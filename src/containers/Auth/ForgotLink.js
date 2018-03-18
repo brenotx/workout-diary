@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ForgotLink = styled.a`
+const ForgotLink = styled.span`
     position: relative;
     margin-top: -10px;
     display: block;

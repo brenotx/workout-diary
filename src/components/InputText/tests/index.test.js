@@ -9,12 +9,13 @@ describe("<InputText />", () => {
         props = {
             hintText: "Name",
             type: "text",
+            blurValidation: false,
             onSubmit: function() {}
         };
     });
 
     it("should render a <div", () => {
-        const renderedComponent = shallow(<InputText {...props} />);
+        const renderedComponent = mount(<InputText {...props} />);
         expect(renderedComponent.find("div").length).toBe(1);
     });
 
@@ -33,8 +34,10 @@ describe("<InputText />", () => {
         expect(renderedComponent.find("span").length).toBe(1);
     });
 
-    it("onBlur event should apply is-dirty class", () => {
-        const renderedComponent = shallow(<InputText {...props} />);
+    it("onBlur event should apply is-dirty class if blurValidation propety is true", () => {
+        let blueOnProps = props;
+        blueOnProps.blurValidation = true;
+        const renderedComponent = mount(<InputText {...blueOnProps} />);
         expect(renderedComponent.find(".is-dirty").length).toBe(0);
         renderedComponent.find("input").simulate("blur");
         expect(renderedComponent.find(".is-dirty").length).toEqual(1);

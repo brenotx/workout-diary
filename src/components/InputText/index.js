@@ -23,7 +23,7 @@ class InputText extends Component {
     }
 
     handleChange(e) {
-        e.preventDefault();
+        // e.preventDefault();
         this.setState(
             {
                 value: e.target.value

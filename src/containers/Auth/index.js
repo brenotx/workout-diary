@@ -1,53 +1,17 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 
 import AuthBox from "./AuthBox";
 import AuthDiv from "./AuthDiv";
 import RichMedia from "./RichMedia";
-import FormContainer from "./FormContainer";
-import InputText from "../../components/InputText";
-import Button from "../../components/Button";
-import ForgotLink from "./ForgotLink";
-// import RoundedButton from "./RoundedButton";
 
 import loginLogo from "../../images/user-256.png";
 import authLogo from "../../images/md-dumbbell.png";
-import { auth } from "../../firebase";
 import SignIn from "./SignIn";
 import Password from "./Password";
 import SignUp from "./SignUp";
 
-const INITIAL_STATE = {
-    username: "",
-    email: "",
-    password: "",
-    error: null
-};
-
 class Auth extends Component {
-    constructor() {
-        super();
-        this.state = { ...INITIAL_STATE };
-
-        this.setInputValue = this.setInputValue.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    setInputValue(type, value) {
-        this.setState({ [type]: value });
-    }
-
-    handleSubmit(email, password) {
-        auth
-            .doCreateUserWithEmailAndPassword(email, password)
-            .then(authUser => {
-                this.setState(() => ({ ...INITIAL_STATE }));
-            })
-            .catch(error => {
-                this.setState({ error: error });
-            });
-    }
-
     render() {
         return (
             <Switch>
