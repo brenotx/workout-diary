@@ -68,6 +68,9 @@ class SignUp extends Component {
                 <Button onClick={() => this.handleSubmit(this.state.email, this.state.password)}>
                     Sign in
                 </Button>
+                <span>
+                    Already have an account? <Link to="/auth/signin">Sign In</Link>
+                </span>
             </FormContainer>
         );
     }

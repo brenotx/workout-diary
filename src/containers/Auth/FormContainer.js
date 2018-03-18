@@ -4,6 +4,7 @@ import styled from "styled-components";
 // https://stackoverflow.com/questions/38774595/cant-sign-up-with-firebase
 const FormContainer = styled.div`
     padding: 10%;
+    text-align: center;
 `;
 
 export default FormContainer;
