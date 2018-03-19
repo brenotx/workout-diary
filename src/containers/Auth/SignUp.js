@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import AuthBox from "./AuthBox";
-import RichMedia from "./RichMedia";
 import FormContainer from "./FormContainer";
 import InputText from "../../components/InputText";
 import Button from "../../components/Button";
-import ForgotLink from "./ForgotLink";
 
-import loginLogo from "../../images/user-256.png";
 import { auth } from "../../firebase";
 
 const INITIAL_STATE = {
