@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { Link, MemoryRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Password from "../Password";
 import FormContainer from "../FormContainer";

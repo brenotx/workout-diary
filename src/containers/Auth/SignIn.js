@@ -31,23 +31,7 @@ class SignIn extends Component {
         this.setState({ [type]: value });
     }
 
-    handleSubmit(email, password) {
-        console.log("Email: " + email);
-        console.log("Password: " + password);
-
-        // const { email, password } = this.state;
-
-        auth
-            .doCreateUserWithEmailAndPassword(email, password)
-            .then(authUser => {
-                this.setState(() => ({ ...INITIAL_STATE }));
-            })
-            .catch(error => {
-                this.setState({ error: error });
-            });
-
-        // event.preventDefault();
-    }
+    handleSubmit(email, password) {}
 
     render() {
         return (
