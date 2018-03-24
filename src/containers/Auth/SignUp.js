@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { SIGN_IN } from "../../constants/routes";
 import FormContainer from "./FormContainer";
 import InputText from "../../components/InputText";
 import Button from "../../components/Button";
@@ -65,7 +66,7 @@ class SignUp extends Component {
                     Sign in
                 </Button>
                 <span>
-                    Already have an account? <Link to="/auth/signin">Sign In</Link>
+                    Already have an account? <Link to={SIGN_IN}>Sign In</Link>
                 </span>
             </FormContainer>
         );

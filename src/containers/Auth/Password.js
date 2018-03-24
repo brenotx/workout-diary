@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { SIGN_IN } from "../../constants/routes";
 import FormContainer from "./FormContainer";
 import InputText from "../../components/InputText";
 import Button from "../../components/Button";
@@ -20,7 +21,7 @@ class Password extends Component {
                 </span>
                 <InputText hintText="email" type="email" />
                 <ForgotLink>
-                    <Link to="/auth/signin">Back to sign in</Link>
+                    <Link to={SIGN_IN}>Back to sign in</Link>
                 </ForgotLink>
                 <Button>Send a email</Button>
             </FormContainer>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "sanitize.css/sanitize.css";
 
 import "./index.css";
+import * as routes from "./constants/routes";
 import App from "./containers/App";
 import Auth from "./containers/Auth";
 import registerServiceWorker from "./registerServiceWorker";
@@ -13,8 +14,8 @@ ReactDOM.render(
     <Router>
         <App>
             {/* <Redirect from="/" to="/auth" /> */}
-            <Route path="/auth" component={Auth} />
-            <Route path="/home" component={Home} />
+            <Route path={routes.AUTH} component={Auth} />
+            <Route path={routes.HOME} component={Home} />
         </App>
     </Router>,
     document.getElementById("root")

@@ -4,7 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import AuthBox from "./AuthBox";
 import AuthDiv from "./AuthDiv";
 import RichMedia from "./RichMedia";
-
+import * as routes from "../../constants/routes";
 import loginLogo from "../../images/user-256.png";
 import authLogo from "../../images/md-dumbbell.png";
 import SignIn from "./SignIn";
@@ -17,30 +17,30 @@ class Auth extends Component {
             <Switch>
                 <Route
                     exact
-                    path={this.props.match.url}
+                    path={routes.AUTH}
                     render={() => (
                         <AuthDiv>
                             <img src={authLogo} alt="Auth Icon" />
                             <span>Workout Diary</span>
                             <div>
-                                <Link to={`${this.props.match.url}/signin`}>
+                                <Link to={routes.SIGN_IN}>
                                     <button>Sign in</button>
                                 </Link>
-                                <Link to={`${this.props.match.url}/signup`}>
+                                <Link to={routes.SIGN_UP}>
                                     <button>Sign up</button>
                                 </Link>
                             </div>
                         </AuthDiv>
                     )}
                 />
-                <Route path={`${this.props.match.url}/:authId`}>
+                <Route path={`${routes.AUTH}/:authId`}>
                     <AuthBox>
                         <RichMedia>
                             <img src={loginLogo} alt="Person Icon" />
                         </RichMedia>
-                        <Route path={`${this.props.match.url}/signin`} component={SignIn} />
-                        <Route path={`${this.props.match.url}/signup`} component={SignUp} />
-                        <Route path={`${this.props.match.url}/password`} component={Password} />
+                        <Route path={routes.SIGN_IN} component={SignIn} />
+                        <Route path={routes.SIGN_UP} component={SignUp} />
+                        <Route path={routes.PASSWORD} component={Password} />
                     </AuthBox>
                 </Route>
             </Switch>
