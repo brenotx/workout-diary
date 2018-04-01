@@ -1,0 +1,11 @@
+.drawer-content {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.drawer-content.drawer-opened {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+}

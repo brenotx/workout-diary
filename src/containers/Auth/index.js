@@ -35,9 +35,7 @@ class Auth extends Component {
                 />
                 <Route path={`${routes.AUTH}/:authId`}>
                     <AuthBox>
-                        <RichMedia>
-                            <img src={loginLogo} alt="Person Icon" />
-                        </RichMedia>
+                        <RichMedia imgSrc={loginLogo} />
                         <Route path={routes.SIGN_IN} component={SignIn} />
                         <Route path={routes.SIGN_UP} component={SignUp} />
                         <Route path={routes.PASSWORD} component={Password} />

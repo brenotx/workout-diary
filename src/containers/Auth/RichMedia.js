@@ -1,6 +1,7 @@
+import React, { Component } from "react";
 import styled from "styled-components";
 
-const RichMedia = styled.div`
+const Container = styled.div`
     padding-top: 10%;
 
     & > img {
@@ -22,5 +23,13 @@ const RichMedia = styled.div`
         }
     }
 `;
+
+const RichMedia = props => {
+    return (
+        <Container>
+            <img src={props.imgSrc} />
+        </Container>
+    );
+};
 
 export default RichMedia;
