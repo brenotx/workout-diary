@@ -29,11 +29,6 @@ class SignUp extends Component {
     }
 
     handleSubmit(email, password) {
-        console.log("Email: " + email);
-        console.log("Password: " + password);
-
-        // const { email, password } = this.state;
-
         auth
             .doCreateUserWithEmailAndPassword(email, password)
             .then(authUser => {
@@ -63,7 +58,7 @@ class SignUp extends Component {
                     required={true}
                 />
                 <Button onClick={() => this.handleSubmit(this.state.email, this.state.password)}>
-                    Sign in
+                    Sign up
                 </Button>
                 <span>
                     Already have an account? <Link to={SIGN_IN}>Sign In</Link>

@@ -29,8 +29,15 @@ class SignIn extends Component {
     }
 
     handleSubmit(email, password) {
-        // TODO: Test
-        this.props.history.push("/home");
+        auth
+            .doSignInWithEmailAndPassword(email, password)
+            .then(authUser => {
+                // this.setState(() => ({ ...INITIAL_STATE }));
+                this.props.history.push("/home");
+            })
+            .catch(error => {
+                this.setState({ error: error });
+            });
     }
 
     render() {

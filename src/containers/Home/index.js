@@ -14,6 +14,30 @@ export const Container = styled.div`
     background-color: #fff;
 `;
 
+export const TreeDots = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: 0;
+
+    &:hover {
+        background-color: rgba(158, 158, 158, 0.2);
+    }
+
+    &:after {
+        content: "\\2807";
+        position: relative;
+        left: 21%;
+        font-size: 2.5em;
+        vertical-align: middle;
+        color: white;
+    }
+`;
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -32,6 +56,7 @@ class Home extends Component {
                         onClick={() => this.setState({ drawerVisible: !this.state.drawerVisible })}
                     />
                     <H2>Workout Diary</H2>
+                    <TreeDots />
                 </AppBar>
                 <Drawer drawerVisible={this.state.drawerVisible} />
                 <div
